@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/css" href="//msiter.ru/cd_catalog.css"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.ItemsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage"
+             xmlns:local="clr-namespace:XamarinForms_Frame">
+    
+    
+    
+    
+    <ContentPage.ToolbarItems>
+        
+        
+        <ToolbarItem x:Name="Header" Icon="@drawable/search.png" Clicked="AddItem_Clicked" />
+        
+        
+    </ContentPage.ToolbarItems>
+    
+    
+    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ItemsListView" 
+                      ItemsSource="{Binding Items}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="OnItemSelected"
+                      SeparatorColor="Gray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="{Binding Clickable}">
+
+
+                            <StackLayout Padding="10" BackgroundColor="White">
+
+
+                                <Grid>
+                                    <Image IsVisible="{Binding DayVisible}"  
+                                       Source="calendarlist.png"
+                                        WidthRequest="32"
+                                        HorizontalOptions="Start"
+                                       />
+
+                                    <Label Text="{Binding Day}" 
+                                       IsVisible="{Binding DayVisible}"
+                                       LineBreakMode="WordWrap"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="Large"
+                                       Margin="32, 0, 0, 0"
+                                       XAlign="Center"
+                                       TextColor="#000000"/>
+                                </Grid>
+
+
+
+                                <Label Text="{Binding Time}" 
+                                       IsVisible="{Binding TimeVisible}"
+                                       LineBreakMode="WordWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16"
+                                       TextColor="#777777"/>
+                                
+                                
+                                <Label Text="{Binding Header}"
+                                       IsVisible="{Binding HeaderVisible}"
+                                       LineBreakMode="WordWrap"
+                                       Style="{DynamicResource ListItemTextStyle}"
+                                       FontSize="Medium"
+                                       TextColor="#000000"/>    
+
+
+
+                                <Label Text="{Binding Place}"
+                                       IsVisible="{Binding PlaceVisible}"
+                                       LineBreakMode="WordWrap" 
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16"
+                                       TextColor="#777777"/>
+                                
+
+
+                                <Label Text="{Binding Description}" 
+                                         IsVisible="{Binding TagsVisible}"
+                       LineBreakMode="WordWrap" 
+                       Style="{DynamicResource ListItemDetailTextStyle}"
+                       FontSize="16"
+                       TextColor="#007AC5"/>
+
+
+                            </StackLayout>
+                        
+                        
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

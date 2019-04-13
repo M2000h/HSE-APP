@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App5.Views.ItemDetailPage"
+             Title="Мероприятие">
+    
+    
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem x:Name="Header" Icon="{Binding Item.FavSource}" Clicked="FavClicked" />
+        
+        
+    </ContentPage.ToolbarItems>
+    
+    
+    <StackLayout Spacing="20" Padding="15">
+
+
+        <Label Text="{Binding Item.Header}" FontSize="Large" TextColor="Black"/>
+
+
+        <Label Text="{Binding Item.ExtraString}" IsVisible="{Binding Item.ExtraVisible}"  FontSize="Medium" XAlign="End"/>
+        
+        
+        <Label Text="{Binding Item.Date}" FontSize="Medium"/>
+        
+        
+        <Label Text="{Binding Item.Place}" IsVisible="{Binding Item.PlaceVisible}" FontSize="Medium"/>
+        
+        
+        <Label Text="{Binding Item.Description}" FontSize="Medium" TextColor="#007AC5"/>
+        
+        
+        <Button Text="Открыть страницу мероприятия"
+                BackgroundColor="#1658DA"
+                TextColor="White"
+                Clicked="OnButtonClicked"/>
+        
+       
+        
+    </StackLayout>
+</ContentPage>
