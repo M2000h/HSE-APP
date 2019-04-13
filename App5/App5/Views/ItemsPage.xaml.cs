@@ -41,7 +41,8 @@ namespace App5.Views
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            SearchBar.IsVisible = !SearchBar.IsVisible;
+            Header.Icon = SearchBar.IsVisible ? "@drawable/cancel.png" : "@drawable/search.png";
         }
 
         protected override void OnAppearing()

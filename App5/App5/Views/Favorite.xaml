@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App5.Views.Favorite"
-              Title="Избранное">
+             Title="Избранное">
     
     
     <ContentPage.ToolbarItems>
@@ -16,6 +16,14 @@
     
     <ContentPage.Content>
         <StackLayout>
+
+            <SearchBar x:Name="SearchBar" 
+                       VerticalOptions="Start"
+                       BackgroundColor="White"
+                       IsVisible="False"
+                />
+            
+            
             <ListView x:Name="ItemsListView" 
                  ItemsSource="{Binding FavItems}"
                  VerticalOptions="FillAndExpand"
@@ -34,6 +42,7 @@
 
 
                                 <Grid IsVisible="{Binding DayVisible}">
+                                    
                                     <Image   
                                         Source="calendarlist.png"
                                         WidthRequest="32"
@@ -47,6 +56,7 @@
                                        Margin="32, 0, 0, 0"
                                        XAlign="Center"
                                        TextColor="#000000"/>
+                                    
                                 </Grid>
 
 
