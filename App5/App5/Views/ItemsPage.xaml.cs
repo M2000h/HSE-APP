@@ -19,13 +19,18 @@ namespace App5.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
-        
+        static public string q = "";
+        void f(object sender, EventArgs e)
+        {
+            q = SearchBar.Text;
+        }
         public ItemsPage()
         {
             
             InitializeComponent();
             BindingContext = viewModel = new ItemsViewModel();
-            
+            SearchBar.TextChanged += f;
+            SearchBar.TextChanged += ItemsViewModel.SearchItems.Execute;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)

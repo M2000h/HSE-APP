@@ -10,6 +10,13 @@ using App5.Views;
 
 namespace App5.ViewModels
 {
+    public class Command1 : Command
+    {
+        public Command1(Action execute) : base(execute)
+        {}
+        public void Execute(object sender, EventArgs args)
+            => Execute(null);
+    }
     public class ItemsViewModel : BaseViewModel
     {
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
@@ -18,6 +25,8 @@ namespace App5.ViewModels
 
         public Command LoadItemsCommand { get; set; }
         static public Command LoadFavotitesItemsCommand { get; set; }
+        static public Command1 SearchItems { get; set; }
+        static public Command1 SearchFavotitesItems { get; set; }
         
         public ItemsViewModel()
         {
@@ -25,6 +34,8 @@ namespace App5.ViewModels
 
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             LoadFavotitesItemsCommand = new Command(async () => await ExecuteLoadFavotitesItemsCommand());
+            SearchItems = new Command1(async () => await ExecuteSearchItems());
+            SearchFavotitesItems = new Command1(async () => await ExecuteSearchFavotitesItems());
             
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
@@ -94,6 +105,78 @@ namespace App5.ViewModels
                             FavItems.Add(new Item() { Type = "Day", Day = Day = item.Day });
                         }
 
+                        FavItems.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+
+
+        async Task ExecuteSearchItems()
+        {
+
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+            string q = ItemsPage.q;
+            try
+            {
+                Items.Clear();
+                string Day = "";
+                foreach (var item in items)
+                {
+                    if (item.Header.ToLower().Contains(q.ToLower()) && item.Type!="Day")
+                    {
+                        if (item.Day != Day )
+                        {
+                            Items.Add(new Item() { Type = "Day", Day = Day = item.Day });
+                        }
+                        Items.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+
+
+        async Task ExecuteSearchFavotitesItems()
+        {
+
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+            string q = Favorite.q;
+            try
+            {
+                FavItems.Clear();
+                string Day = "";
+                foreach (var item in items)
+                {
+                    if (FavotiteLinks.Links.Contains(item.Link) && item.Header.ToLower().Contains(q.ToLower()) && item.Type != "Day")
+                    {
+                        if (item.Day != Day)
+                        {
+                            FavItems.Add(new Item() { Type = "Day", Day = Day = item.Day });
+                        }
                         FavItems.Add(item);
                     }
                 }

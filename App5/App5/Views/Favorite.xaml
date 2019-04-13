@@ -21,6 +21,7 @@
                        VerticalOptions="Start"
                        BackgroundColor="White"
                        IsVisible="False"
+                        
                 />
             
             
@@ -46,8 +47,7 @@
                                     <Image   
                                         Source="calendarlist.png"
                                         WidthRequest="32"
-                                        HorizontalOptions="Start"
-                                       />
+                                        HorizontalOptions="Start"/>
 
                                     <Label Text="{Binding Day}" 
                                        LineBreakMode="WordWrap"

@@ -16,14 +16,23 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Favorite : ContentPage
     {
+       
         ItemsViewModel viewModel;
+        static public string q = "";
+        void f(object sender, EventArgs e)
+        {
+            q = SearchBar.Text;
+        }
         public Favorite()
         {
             
             InitializeComponent();
 
             BindingContext = viewModel = new ItemsViewModel();
-            
+
+            SearchBar.TextChanged += f;
+            SearchBar.TextChanged += ItemsViewModel.SearchFavotitesItems.Execute;
+
         }
         
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
