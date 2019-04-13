@@ -21,22 +21,23 @@ namespace App5.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
         public ObservableCollection<Item> FavItems { get; set; } = new ObservableCollection<Item>();
-        System.Collections.Generic.IEnumerable<Item> items;
+        static System.Collections.Generic.IEnumerable<Item> items;
 
         public Command LoadItemsCommand { get; set; }
+        static public Command LoadItemsCommand1 { get; set; }
         static public Command LoadFavotitesItemsCommand { get; set; }
         static public Command1 SearchItems { get; set; }
         static public Command1 SearchFavotitesItems { get; set; }
-        
+
         public ItemsViewModel()
         {
             Title = "Browse";
-
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand1 = LoadItemsCommand;
             LoadFavotitesItemsCommand = new Command(async () => await ExecuteLoadFavotitesItemsCommand());
             SearchItems = new Command1(async () => await ExecuteSearchItems());
             SearchFavotitesItems = new Command1(async () => await ExecuteSearchFavotitesItems());
-            
+
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as Item;
@@ -47,43 +48,34 @@ namespace App5.ViewModels
 
         async Task ExecuteLoadItemsCommand()
         {
-            
+
             if (IsBusy)
                 return;
 
             IsBusy = true;
-
-            try
+            Items.Clear();
+            FavItems.Clear();
+            items = await DataStore.GetItemsAsync(true);
+            foreach (var item in items)
             {
-                Items.Clear();
-                FavItems.Clear();
-                items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                Items.Add(item);
+            }
+            string Day = "";
+            foreach (var item in items)
+            {
+                if (AppData.Links.Contains(item.Link))
                 {
-                    Items.Add(item);
-                }
-                string Day = "";
-                foreach (var item in items)
-                {
-                    if (AppData.Links.Contains(item.Link))
+                    if (item.Day != Day)
                     {
-                        if (item.Day != Day)
-                        {
-                            FavItems.Add(new Item() { Type = "Day", Day = Day = item.Day}); 
-                        }
-                        FavItems.Add(item);
+                        FavItems.Add(new Item() { Type = "Day", Day = Day = item.Day });
                     }
+                    FavItems.Add(item);
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            IsBusy = false;
+
         }
+
         async Task ExecuteLoadFavotitesItemsCommand()
         {
 

@@ -26,9 +26,15 @@ namespace App5.Services
                 return reader.ReadToEnd();
 
         }
+        public MockDataStore(int q)
+        {
+            AppData.ru = Get("https://shakura.dev/hseapi");
+            AppData.en = Get("https://shakura.dev/hseapien");
+        }
         public MockDataStore()
         {
-            Item[] data = JsonConvert.DeserializeObject<Item[]>(Get(AppData.API_Link));
+            
+            Item[] data = JsonConvert.DeserializeObject<Item[]>(AppData.curr);
             items = data.OfType<Item>().ToList();
         }
 

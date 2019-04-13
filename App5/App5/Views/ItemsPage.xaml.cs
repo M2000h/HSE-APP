@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using App5.Models;
 using App5.Views;
 using App5.ViewModels;
+using App5.Services;
 using System.Threading;
 
 
@@ -24,6 +25,10 @@ namespace App5.Views
         {
             q = SearchBar.Text;
         }
+        void ff(object sender, EventArgs e)
+        {
+            new MockDataStore(1);
+        }
         public ItemsPage()
         {
             
@@ -31,6 +36,7 @@ namespace App5.Views
             BindingContext = viewModel = new ItemsViewModel();
             SearchBar.TextChanged += f;
             SearchBar.TextChanged += ItemsViewModel.SearchItems.Execute;
+            ItemsListView.Refreshing += ff;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -53,13 +59,14 @@ namespace App5.Views
             else
                 SearchBar.Text = "";
         }
-
+        string lang = AppData.API_Link;
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
+            if (viewModel.Items.Count == 0 || lang!= AppData.API_Link)
                 viewModel.LoadItemsCommand.Execute(null);
+            lang = AppData.API_Link;
         }
     }
 }

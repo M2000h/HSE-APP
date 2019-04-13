@@ -23,6 +23,7 @@ namespace App5.Views
         {
             q = SearchBar.Text;
         }
+
         public Favorite()
         {
             
@@ -60,9 +61,6 @@ namespace App5.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

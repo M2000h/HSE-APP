@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App5.Views;
+using App5.Services;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace App5
@@ -13,14 +15,14 @@ namespace App5
         {
             InitializeComponent();
 
-
+            
             MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-
+            new MockDataStore(1);
             //viewModel
         }
 
