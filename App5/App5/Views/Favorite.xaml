@@ -8,7 +8,7 @@
     <ContentPage.ToolbarItems>
 
 
-        <ToolbarItem x:Name="Header" Icon="@drawable/search.png" Clicked="AddItem_Clicked" />
+        <ToolbarItem x:Name="Header" Icon="@drawable/search.png" Clicked="Search_Clicked" />
          
         
     </ContentPage.ToolbarItems>

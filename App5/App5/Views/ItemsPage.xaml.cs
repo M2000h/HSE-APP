@@ -44,10 +44,14 @@ namespace App5.Views
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void Search_Clicked(object sender, EventArgs e)
         {
             SearchBar.IsVisible = !SearchBar.IsVisible;
             Header.Icon = SearchBar.IsVisible ? "@drawable/cancel.png" : "@drawable/search.png";
+            if (SearchBar.IsVisible)
+                SearchBar.Focus();
+            else
+                SearchBar.Text = "";
         }
 
         protected override void OnAppearing()
