@@ -8,7 +8,7 @@
     <ContentPage.ToolbarItems>
 
 
-        <ToolbarItem x:Name="Header" Icon="{Binding Item.FavSource}" Clicked="FavClicked" />
+        <ToolbarItem x:Name="Header" Icon="@drawable/search.png" Clicked="AddItem_Clicked" />
          
         
     </ContentPage.ToolbarItems>
@@ -33,15 +33,14 @@
                             <StackLayout Padding="10" BackgroundColor="White">
 
 
-                                <Grid>
-                                    <Image IsVisible="{Binding DayVisible}"  
+                                <Grid IsVisible="{Binding DayVisible}">
+                                    <Image   
                                         Source="calendarlist.png"
                                         WidthRequest="32"
                                         HorizontalOptions="Start"
                                        />
 
                                     <Label Text="{Binding Day}" 
-                                       IsVisible="{Binding DayVisible}"
                                        LineBreakMode="WordWrap"
                                        Style="{DynamicResource ListItemTextStyle}"
                                        FontSize="Large"
