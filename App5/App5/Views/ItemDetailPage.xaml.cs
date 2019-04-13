@@ -38,10 +38,10 @@ namespace App5.Views
         async void FavClicked(object sender, EventArgs args)
         {
             //viewModel.Item.Favorite = !viewModel.Item.Favorite;
-            if ( FavotiteLinks.Links.Contains(viewModel.Item.Link))
-                FavotiteLinks.Links.Remove(viewModel.Item.Link);
+            if (AppData.Links.Contains(viewModel.Item.Link))
+                AppData.Links.Remove(viewModel.Item.Link);
             else
-                FavotiteLinks.Links.Add(viewModel.Item.Link);
+                AppData.Links.Add(viewModel.Item.Link);
             Header.Icon = viewModel.Item.FavSource;
             ItemsViewModel.LoadFavotitesItemsCommand.Execute(null);
         }

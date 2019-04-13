@@ -24,6 +24,6 @@ namespace App5.Models
         public bool TagsVisible { get => Tags.Length > 0 && Type == "Event"; }
         public bool HeaderVisible { get => Type == "Event"; }
         public bool Clickable { get => Type == "Event"; }
-        public string FavSource { get => FavotiteLinks.Links.Contains(Link) ? "Added.png" : "fplus.png"; }
+        public string FavSource { get => AppData.Links.Contains(Link) ? "Added.png" : "fplus.png"; }
     }
 }

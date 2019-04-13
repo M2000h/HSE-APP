@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using App5.Models;
 namespace App5.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -11,6 +11,18 @@ namespace App5.Views
         public AboutPage()
         {
             InitializeComponent();
+        }
+        async void Russian_Clicked(object sender, EventArgs args)
+        {
+            Russian.IsEnabled = false;
+            English.IsEnabled = true;
+            AppData.API_Link = "https://shakura.dev/hseapi";
+        }
+        async void English_Clicked(object sender, EventArgs args)
+        {
+            English.IsEnabled = false;
+            Russian.IsEnabled = true;
+            AppData.API_Link = "https://shakura.dev/hseapien";
         }
     }
 }

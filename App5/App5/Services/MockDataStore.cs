@@ -28,7 +28,7 @@ namespace App5.Services
         }
         public MockDataStore()
         {
-            Item[] data = JsonConvert.DeserializeObject<Item[]>(Get("https://shakura.dev/hseapi"));
+            Item[] data = JsonConvert.DeserializeObject<Item[]>(Get(AppData.API_Link));
             items = data.OfType<Item>().ToList();
         }
 

@@ -65,7 +65,7 @@ namespace App5.ViewModels
                 string Day = "";
                 foreach (var item in items)
                 {
-                    if (FavotiteLinks.Links.Contains(item.Link))
+                    if (AppData.Links.Contains(item.Link))
                     {
                         if (item.Day != Day)
                         {
@@ -98,7 +98,7 @@ namespace App5.ViewModels
                 string Day = "";
                 foreach (var item in items)
                 {
-                    if (FavotiteLinks.Links.Contains(item.Link))
+                    if (AppData.Links.Contains(item.Link))
                     {
                         if (item.Day != Day)
                         {
@@ -171,7 +171,7 @@ namespace App5.ViewModels
                 string Day = "";
                 foreach (var item in items)
                 {
-                    if (FavotiteLinks.Links.Contains(item.Link) && item.Header.ToLower().Contains(q.ToLower()) && item.Type != "Day")
+                    if (AppData.Links.Contains(item.Link) && item.Header.ToLower().Contains(q.ToLower()) && item.Type != "Day")
                     {
                         if (item.Day != Day)
                         {
