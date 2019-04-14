@@ -84,6 +84,8 @@ namespace App5.ViewModels
             foreach (var item in items)
             {
                 if (item.Header.ToLower().
+                    Contains(SearchQuery.ToLower()) ||
+                   item.Description.ToLower().
                     Contains(SearchQuery.ToLower()))
                 {
                     if (item.Day != Day)
@@ -111,8 +113,10 @@ namespace App5.ViewModels
             string Day = "";
             foreach (var item in items)
             {
-                if (AppData.Links.Contains(item.Link) && item.Header.ToLower().
-                    Contains(SearchQuery.ToLower()))
+                if (AppData.Links.Contains(item.Link) && (item.Header.ToLower().
+                    Contains(SearchQuery.ToLower()) ||
+                    item.Description.ToLower().
+                    Contains(SearchQuery.ToLower())))
                 {
                     if (item.Day != Day)
                     {
