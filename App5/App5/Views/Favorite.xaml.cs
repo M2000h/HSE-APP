@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using App5.Models;
 using App5.Views;
 using App5.ViewModels;
+using App5.Services;
 using System.Threading;
 
 namespace App5.Views
@@ -16,7 +17,7 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Favorite : ContentPage
     {
-       
+
         ItemsViewModel viewModel;
         static public string SearchQuery = "";
         void SearchQueryUpdate(object sender, EventArgs e)
@@ -28,12 +29,11 @@ namespace App5.Views
         {
             
             InitializeComponent();
-
+            
             BindingContext = viewModel = new ItemsViewModel();
-
             SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchFavotitesItems.Execute;
-
+            UIChenged += UIUpdate;
         }
         
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -44,7 +44,7 @@ namespace App5.Views
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
-            ItemsListView.SelectedItem = null;
+            ItemsListView1.SelectedItem = null;
         }
 
         async void Search_Clicked(object sender, EventArgs e)
@@ -55,6 +55,16 @@ namespace App5.Views
                 SearchBar.Focus();
             else
                 SearchBar.Text = "";
+        }
+        public delegate void Handler();
+        static public event Handler UIChenged;
+        static public void UI()
+        {
+            UIChenged();
+        }
+        void UIUpdate()
+        {
+            ItemsListView1.RefreshCommand.Execute(null);
         }
     }
 }

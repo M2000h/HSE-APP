@@ -36,7 +36,8 @@ namespace App5.Views
             BindingContext = viewModel = new ItemsViewModel();
             SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchItems.Execute;
-            ItemsListView.Refreshing += reload;
+            ItemsListView1.Refreshing += reload;
+            UIChenged += UIUpdate;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -45,9 +46,8 @@ namespace App5.Views
             if (item == null)
                 return;
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+            
+            ItemsListView1.SelectedItem = null;
         }
 
         async void Search_Clicked(object sender, EventArgs e)
@@ -67,6 +67,18 @@ namespace App5.Views
             if (viewModel.Items.Count == 0 || lang!= AppData.API_Link)
                 viewModel.LoadItemsCommand.Execute(null);
             lang = AppData.API_Link;
+        }
+
+
+        public delegate void Handler();
+        static public event Handler UIChenged;
+        static public void UI()
+        {
+            UIChenged();
+        }
+        void UIUpdate()
+        {
+            ItemsListView1.RefreshCommand.Execute(null);
         }
     }
 }

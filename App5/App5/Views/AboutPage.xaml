@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App5.Views.AboutPage"
              xmlns:vm="clr-namespace:App5.ViewModels"
-             Title="Account">
-    <StackLayout Padding="10" BackgroundColor="White">
+             Title="Account"
+             x:Name="ContentPage1">
+    <StackLayout Padding="10"
+                 BackgroundColor="White"
+                 x:Name="StackLayout1">
         <Grid >
             <Label Text="Язык: " 
+                   x:Name="LANG_TEXT"
                LineBreakMode="WordWrap"
                Style="{DynamicResource ListItemTextStyle}"
                FontSize="Large"
@@ -23,29 +27,49 @@
             <Button Text="English"
                     x:Name="English"
                     Clicked="English_Clicked"
-                     BackgroundColor="#1658DA"
+                    BackgroundColor="#1658DA"
                     TextColor="White"
                     HorizontalOptions="End"
                     IsEnabled="True"/>
         </Grid>
+
         
-        
-        
-        
+        <StackLayout
+                Orientation="Vertical">
+            <BoxView  
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Fill"
+               HeightRequest="1" 
+               Color="#888888"/>
+        </StackLayout>
+
+
         <Grid >
             <Label Text="Тема: " 
-               LineBreakMode="WordWrap"
-               Style="{DynamicResource ListItemTextStyle}"
-               FontSize="Large"
-               XAlign="Start"
-               TextColor="Black"/>
+                   x:Name="THEME_TEXT"
+                   LineBreakMode="WordWrap"
+                   Style="{DynamicResource ListItemTextStyle}"
+                   FontSize="Large"
+                   XAlign="Start"
+                   TextColor="Black"/>
+            
+            
             <Button Text="День"
-                TextColor="White"
+                    x:Name="Day"
+                    TextColor="Black"
                     Margin="0, 0, 80, 0"
-                    HorizontalOptions="End"/>
+                    BackgroundColor="#f7f7f7"
+                    HorizontalOptions="End"
+                    Clicked="White_Clicked"/>
+            
+            
+            
             <Button Text="Ночь"
+                    x:Name="Night"
                     TextColor="White"
-                    HorizontalOptions="End"/>
+                    BackgroundColor="#262626"
+                    HorizontalOptions="End"
+                    Clicked="Black_Clicked"/>
         </Grid>
     </StackLayout>
 

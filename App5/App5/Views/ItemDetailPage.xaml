@@ -17,19 +17,19 @@
     <StackLayout Spacing="20" Padding="15">
 
 
-        <Label Text="{Binding Item.Header}" FontSize="Large" TextColor="Black"/>
+        <Label Text="{Binding Item.Header}" x:Name="UIHeader" FontSize="Large" TextColor="Black"/>
 
 
-        <Label Text="{Binding Item.ExtraString}" IsVisible="{Binding Item.ExtraVisible}"  FontSize="Medium" XAlign="End"/>
-        
-        
-        <Label Text="{Binding Item.Date}" FontSize="Medium"/>
-        
-        
-        <Label Text="{Binding Item.Place}" IsVisible="{Binding Item.PlaceVisible}" FontSize="Medium"/>
-        
-        
-        <Label Text="{Binding Item.Description}" FontSize="Medium" TextColor="#007AC5"/>
+        <Label Text="{Binding Item.ExtraString}"  x:Name="UIExtraString" IsVisible="{Binding Item.ExtraVisible}"  FontSize="Medium" XAlign="End"/>
+
+
+        <Label Text="{Binding Item.Date}" x:Name="UIDate" FontSize="Medium"/>
+
+
+        <Label Text="{Binding Item.Place}" x:Name="UIPlace" IsVisible="{Binding Item.PlaceVisible}" FontSize="Medium"/>
+
+
+        <Label Text="{Binding Item.Description}" x:Name="UIDescription" FontSize="Medium" TextColor="#007AC5"/>
         
         
         <Button Text="Открыть страницу мероприятия"

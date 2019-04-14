@@ -27,7 +27,7 @@
                        BackgroundColor="White"
                        IsVisible="False"/>
             
-            <ListView x:Name="ItemsListView" 
+            <ListView x:Name="ItemsListView1" 
                       ItemsSource="{Binding Items}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="true"
@@ -42,22 +42,23 @@
                         <ViewCell IsEnabled="{Binding Clickable}">
 
 
-                            <StackLayout Padding="10" BackgroundColor="White">
+                            <StackLayout x:Name="StackLayout1" Padding="10" BackgroundColor="{Binding BackgroundColor}">
 
 
                                 <Grid IsVisible="{Binding DayVisible}">
-                                    
+
                                     <Image Source="calendarlist.png"
                                            WidthRequest="32"
                                            HorizontalOptions="Start"/>
-
+                                    
+                                    
                                     <Label Text="{Binding Day}" 
                                            LineBreakMode="WordWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
                                            FontSize="Large"
                                            Margin="42, 0, 0, 0"
                                            XAlign="Center"
-                                           TextColor="#000000"/>
+                                           TextColor="{Binding FrontColor}"/>
                                     
                                 </Grid>
 
@@ -77,7 +78,7 @@
                                        LineBreakMode="WordWrap"
                                        Style="{DynamicResource ListItemTextStyle}"
                                        FontSize="Medium"
-                                       TextColor="#000000"/>
+                                       TextColor="{Binding FrontColor}"/>
 
 
                                 

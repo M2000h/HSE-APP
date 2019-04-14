@@ -33,5 +33,29 @@ namespace App5.Views
             //ItemsPage.viewModel.LoadItemsCommand.Execute(null);
 
         }
+        async void Black_Clicked(object sender, EventArgs args)
+        {
+            AppData.IsThemeWhite = false;
+            UIUpdate();
+
+        }
+        async void White_Clicked(object sender, EventArgs args)
+        {
+            AppData.IsThemeWhite = true;
+            UIUpdate();
+        }
+        void UIUpdate()
+        {
+            StackLayout1.BackgroundColor = AppData.BackgroundColor;
+            LANG_TEXT.TextColor = AppData.FrontColor;
+            THEME_TEXT.TextColor = AppData.FrontColor;
+            MainPage.UI();
+            if (ItemDetailPage.count != 0)
+                ItemDetailPage.UI();
+            ItemsPage.UI();
+            Favorite.UI();
+
+
+        }
     }
 }

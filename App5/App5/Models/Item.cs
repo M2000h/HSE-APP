@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Xamarin.Forms;
 namespace App5.Models
 {
     public class Item
@@ -24,5 +24,7 @@ namespace App5.Models
         public bool HeaderVisible { get => Type == "Event"; }
         public bool Clickable { get => Type == "Event"; }
         public string FavSource { get => AppData.Links.Contains(Link) ? "Added.png" : "fplus.png"; }
+        public Color FrontColor { get => AppData.FrontColor;}
+        public Color BackgroundColor { get => AppData.BackgroundColor; }
     }
 }

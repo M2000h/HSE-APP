@@ -15,18 +15,19 @@
     
     
     <ContentPage.Content>
-        
-        <StackLayout>
+
+        <StackLayout x:Name="UIStackLayout1">
             
             <SearchBar x:Name="SearchBar" 
                        VerticalOptions="Start"
                        BackgroundColor="White"
                        IsVisible="False"/>
             
-            <ListView x:Name="ItemsListView" 
+            <ListView x:Name="ItemsListView1" 
                       ItemsSource="{Binding FavItems}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadItemsCommand}"
                       IsPullToRefreshEnabled="False"
                       IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                       CachingStrategy="RecycleElement"
@@ -37,7 +38,7 @@
                         <ViewCell IsEnabled="{Binding Clickable}">
 
 
-                            <StackLayout Padding="10" BackgroundColor="White">
+                            <StackLayout Padding="10" BackgroundColor="{Binding BackgroundColor}" x:Name="UIStackLayout">
 
 
                                 <Grid IsVisible="{Binding DayVisible}">
@@ -52,7 +53,7 @@
                                            FontSize="Large"
                                            Margin="42, 0, 0, 0"
                                            XAlign="Center"
-                                           TextColor="#000000"/>
+                                           TextColor="{Binding FrontColor}"/>
                                     
                                 </Grid>
 
@@ -67,11 +68,12 @@
 
 
                                 <Label Text="{Binding Header}"
+                                       x:Name="UIHeader"
                                        IsVisible="{Binding HeaderVisible}"
                                        LineBreakMode="WordWrap"
                                        Style="{DynamicResource ListItemTextStyle}"
                                        FontSize="Medium"
-                                       TextColor="#000000"/>
+                                       TextColor="{Binding FrontColor}"/>
 
 
 
