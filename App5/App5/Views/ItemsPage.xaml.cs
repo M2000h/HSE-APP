@@ -79,6 +79,7 @@ namespace App5.Views
         void UIUpdate()
         {
             ItemsListView1.RefreshCommand.Execute(null);
+
         }
     }
 }

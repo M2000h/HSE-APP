@@ -20,9 +20,6 @@ namespace App5.Views
             English.IsEnabled = true;
             AppData.API_Link = "https://shakura.dev/hseapi";
             ItemsViewModel.LoadItemsCommand1.Execute(null);
-            //ItemsPage.viewModel.LoadItemsCommand.Execute(null);
-
-
         }
         async void English_Clicked(object sender, EventArgs args)
         {
@@ -30,7 +27,6 @@ namespace App5.Views
             Russian.IsEnabled = true;
             AppData.API_Link = "https://shakura.dev/hseapien";
             ItemsViewModel.LoadItemsCommand1.Execute(null);
-            //ItemsPage.viewModel.LoadItemsCommand.Execute(null);
 
         }
         async void Black_Clicked(object sender, EventArgs args)

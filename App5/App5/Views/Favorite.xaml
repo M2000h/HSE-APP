@@ -16,11 +16,13 @@
     
     <ContentPage.Content>
 
-        <StackLayout x:Name="UIStackLayout1">
+        <StackLayout>
             
             <SearchBar x:Name="SearchBar" 
                        VerticalOptions="Start"
-                       BackgroundColor="White"
+                       BackgroundColor="#1658DA"
+                       TextColor="White"
+                       CancelButtonColor="White"
                        IsVisible="False"/>
             
             <ListView x:Name="ItemsListView1" 
@@ -38,7 +40,7 @@
                         <ViewCell IsEnabled="{Binding Clickable}">
 
 
-                            <StackLayout Padding="10" BackgroundColor="{Binding BackgroundColor}" x:Name="UIStackLayout">
+                            <StackLayout Padding="10" BackgroundColor="{Binding BackgroundColor}">
 
 
                                 <Grid IsVisible="{Binding DayVisible}">

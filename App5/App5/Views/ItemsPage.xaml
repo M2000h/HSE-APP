@@ -18,13 +18,15 @@
 
 
 
-    <ContentPage.Content> 
-       
+    <ContentPage.Content>
+
         <StackLayout> 
             
             <SearchBar x:Name="SearchBar" 
                        VerticalOptions="Start"
-                       BackgroundColor="White"
+                       BackgroundColor="#1658DA"
+                       TextColor="White"
+                       CancelButtonColor="White"
                        IsVisible="False"/>
             
             <ListView x:Name="ItemsListView1" 
@@ -42,7 +44,7 @@
                         <ViewCell IsEnabled="{Binding Clickable}">
 
 
-                            <StackLayout x:Name="StackLayout1" Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                            <StackLayout  Padding="10" BackgroundColor="{Binding BackgroundColor}">
 
 
                                 <Grid IsVisible="{Binding DayVisible}">
@@ -50,8 +52,8 @@
                                     <Image Source="calendarlist.png"
                                            WidthRequest="32"
                                            HorizontalOptions="Start"/>
-                                    
-                                    
+
+
                                     <Label Text="{Binding Day}" 
                                            LineBreakMode="WordWrap"
                                            Style="{DynamicResource ListItemTextStyle}"
@@ -59,7 +61,7 @@
                                            Margin="42, 0, 0, 0"
                                            XAlign="Center"
                                            TextColor="{Binding FrontColor}"/>
-                                    
+
                                 </Grid>
 
 
