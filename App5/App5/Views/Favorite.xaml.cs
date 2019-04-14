@@ -33,7 +33,7 @@ namespace App5.Views
             BindingContext = viewModel = new ItemsViewModel();
             SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchFavotitesItems.Execute;
-            UIChenged += UIUpdate;
+            AboutPage.ThemeChanged += UIUpdate;
         }
         
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -56,15 +56,15 @@ namespace App5.Views
             else
                 SearchBar.Text = "";
         }
-        public delegate void Handler();
-        static public event Handler UIChenged;
-        static public void UI()
-        {
-            UIChenged();
-        }
         void UIUpdate()
         {
-            ItemsListView1.RefreshCommand.Execute(null);
+            viewModel.LoadItemsCommand.Execute(null);
+            if (SearchBar.IsVisible)
+            {
+                string a = SearchBar.Text;
+                SearchBar.Text = "";
+                SearchBar.Text = a;
+            }
         }
     }
 }

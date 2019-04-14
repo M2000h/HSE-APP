@@ -10,6 +10,8 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
     {
+        public delegate void VoidDelegate();
+        public static event VoidDelegate ThemeChanged;
         public AboutPage()
         {
             InitializeComponent();
@@ -45,11 +47,8 @@ namespace App5.Views
             StackLayout1.BackgroundColor = AppData.BackgroundColor;
             LANG_TEXT.TextColor = AppData.FrontColor;
             THEME_TEXT.TextColor = AppData.FrontColor;
+            ThemeChanged();
             MainPage.UI();
-            if (ItemDetailPage.count != 0)
-                ItemDetailPage.UI();
-            ItemsPage.UI();
-            Favorite.UI();
 
 
         }

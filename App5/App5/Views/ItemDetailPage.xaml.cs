@@ -14,22 +14,13 @@ namespace App5.Views
 
 
         ItemDetailViewModel viewModel;
-
-
-        public static int count = 0;
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
 
             InitializeComponent();
-
             BindingContext = this.viewModel = viewModel;
-            UIHeader.TextColor = AppData.FrontColor;
-            UIExtraString.TextColor = AppData.FrontColor;
-            UIDate.TextColor = AppData.FrontColor;
-            UIPlace.TextColor = AppData.FrontColor;
-            //UIDescription.TextColor = AppData.FrontColor;
-            UIChenged += UIUpdate;
-            count += 1;
+            UIUpdate();
+            AboutPage.ThemeChanged += UIUpdate;
         }
         public void OpenLink()
         {
@@ -41,7 +32,6 @@ namespace App5.Views
         
         async void FavClicked(object sender, EventArgs args)
         {
-            //viewModel.Item.Favorite = !viewModel.Item.Favorite;
             if (AppData.Links.Contains(viewModel.Item.Link))
                 AppData.Links.Remove(viewModel.Item.Link);
             else
@@ -57,21 +47,12 @@ namespace App5.Views
             var th = new Thread(OpenLink);
             th.Start();
         }
-
-
-        public delegate void Handler();
-        static public event Handler UIChenged;
-        static public void UI()
-        {
-            UIChenged();
-        }
         void UIUpdate()
         {
             UIHeader.TextColor = AppData.FrontColor;
             UIExtraString.TextColor = AppData.FrontColor;
             UIDate.TextColor = AppData.FrontColor;
             UIPlace.TextColor = AppData.FrontColor;
-            //UIDescription.TextColor = AppData.FrontColor;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace App5.Views
             SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchItems.Execute;
             ItemsListView1.Refreshing += reload;
-            UIChenged += UIUpdate;
+            AboutPage.ThemeChanged += UIUpdate;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -68,17 +68,15 @@ namespace App5.Views
                 viewModel.LoadItemsCommand.Execute(null);
             lang = AppData.API_Link;
         }
-
-
-        public delegate void Handler();
-        static public event Handler UIChenged;
-        static public void UI()
-        {
-            UIChenged();
-        }
         void UIUpdate()
         {
-            ItemsListView1.RefreshCommand.Execute(null);
+            viewModel.LoadItemsCommand.Execute(null);
+            if (SearchBar.IsVisible)
+            {
+                string a = SearchBar.Text;
+                SearchBar.Text = "";
+                SearchBar.Text = a;
+            }
 
         }
     }
