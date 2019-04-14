@@ -18,10 +18,10 @@ namespace App5.Views
     {
        
         ItemsViewModel viewModel;
-        static public string q = "";
-        void f(object sender, EventArgs e)
+        static public string SearchQuery = "";
+        void SearchQueryUpdate(object sender, EventArgs e)
         {
-            q = SearchBar.Text;
+            SearchQuery = SearchBar.Text;
         }
 
         public Favorite()
@@ -31,7 +31,7 @@ namespace App5.Views
 
             BindingContext = viewModel = new ItemsViewModel();
 
-            SearchBar.TextChanged += f;
+            SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchFavotitesItems.Execute;
 
         }
@@ -44,7 +44,6 @@ namespace App5.Views
 
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
-            // Manually deselect item.
             ItemsListView.SelectedItem = null;
         }
 
@@ -56,11 +55,6 @@ namespace App5.Views
                 SearchBar.Focus();
             else
                 SearchBar.Text = "";
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
         }
     }
 }

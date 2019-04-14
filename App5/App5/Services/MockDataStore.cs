@@ -15,18 +15,24 @@ namespace App5.Services
     public class MockDataStore : IDataStore<Item>
     {
         List<Item> items;
-        public string Get(string url)
+        static public string Get(string url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-                return reader.ReadToEnd();
+            try
+            {
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                    return reader.ReadToEnd();
+            }
+            catch
+            {
+                return null;
+            }
 
         }
-        public MockDataStore(int q)
+        static public void RealoadData()
         {
             AppData.ru = Get("https://shakura.dev/hseapi");
             AppData.en = Get("https://shakura.dev/hseapien");
@@ -37,36 +43,6 @@ namespace App5.Services
             Item[] data = JsonConvert.DeserializeObject<Item[]>(AppData.curr);
             items = data.OfType<Item>().ToList();
         }
-
-        public async Task<bool> AddItemAsync(Item item)
-        {
-            items.Add(item);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<bool> UpdateItemAsync(Item item)
-        {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<bool> DeleteItemAsync(string id)
-        {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<Item> GetItemAsync(string id)
-        {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
-        }
-
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);

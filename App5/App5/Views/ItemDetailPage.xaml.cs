@@ -43,7 +43,7 @@ namespace App5.Views
             else
                 AppData.Links.Add(viewModel.Item.Link);
             Header.Icon = viewModel.Item.FavSource;
-            ItemsViewModel.LoadFavotitesItemsCommand.Execute(null);
+            ItemsViewModel.LoadItemsCommand1.Execute(null);
         }
 
 

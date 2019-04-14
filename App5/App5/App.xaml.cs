@@ -22,7 +22,7 @@ namespace App5
         protected override void OnStart()
         {
             // Handle when your app starts
-            new MockDataStore(1);
+            MockDataStore.RealoadData();
             //viewModel
         }
 

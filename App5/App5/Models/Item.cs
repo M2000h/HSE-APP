@@ -6,7 +6,6 @@ namespace App5.Models
     {
         public string Type { get; set; }
         public string Day { get; set; } = "";
-        public string Id { get; set; } = "";
         public string Header { get; set; } = "";
         public string Description { get => string.Join(", ", Tags); }
         public string ExtraString { get => string.Join(", ", Extra); }

@@ -19,24 +19,24 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
-        static public string q = "";
-        void f(object sender, EventArgs e)
+        static public ItemsViewModel viewModel;
+        static public string SearchQuery = "";
+        void SearchQueryUpdate(object sender, EventArgs e)
         {
-            q = SearchBar.Text;
+            SearchQuery = SearchBar.Text;
         }
-        void ff(object sender, EventArgs e)
+        void reload(object sender, EventArgs e)
         {
-            new MockDataStore(1);
+            MockDataStore.RealoadData();
         }
         public ItemsPage()
         {
             
             InitializeComponent();
             BindingContext = viewModel = new ItemsViewModel();
-            SearchBar.TextChanged += f;
+            SearchBar.TextChanged += SearchQueryUpdate;
             SearchBar.TextChanged += ItemsViewModel.SearchItems.Execute;
-            ItemsListView.Refreshing += ff;
+            ItemsListView.Refreshing += reload;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)

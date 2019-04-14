@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App5.Models;
 using App5.ViewModels;
+using App5.Views;
 namespace App5.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -19,9 +20,9 @@ namespace App5.Views
             English.IsEnabled = true;
             AppData.API_Link = "https://shakura.dev/hseapi";
             ItemsViewModel.LoadItemsCommand1.Execute(null);
-            //Favorite.q = "";
-            //ItemsPage.q = " ";
-            //ItemsViewModel.SearchItems.Execute(null);
+            //ItemsPage.viewModel.LoadItemsCommand.Execute(null);
+
+
         }
         async void English_Clicked(object sender, EventArgs args)
         {
@@ -29,9 +30,8 @@ namespace App5.Views
             Russian.IsEnabled = true;
             AppData.API_Link = "https://shakura.dev/hseapien";
             ItemsViewModel.LoadItemsCommand1.Execute(null);
-            //Favorite.q = "";
-            //ItemsPage.q = " ";
-            //ItemsViewModel.SearchItems.Execute(null);
+            //ItemsPage.viewModel.LoadItemsCommand.Execute(null);
+
         }
     }
 }
