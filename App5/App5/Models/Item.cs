@@ -18,6 +18,7 @@ namespace App5.Models
         public string[] Extra { set; get; } = { };
         public bool DayVisible { get => Type == "Day"; }
         public bool ExtraVisible { get => ExtraString != "" && Type == "Event"; }
+        public bool DescriptionVisible { get => Description != "" && Type == "Event"; }
         public bool TimeVisible { get => Time != "" && Type == "Event"; }
         public bool PlaceVisible { get => Place != "" && Type == "Event"; }
         public bool TagsVisible { get => Tags.Length > 0 && Type == "Event"; }

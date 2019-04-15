@@ -29,7 +29,7 @@
         <Label Text="{Binding Item.Place}" x:Name="UIPlace" IsVisible="{Binding Item.PlaceVisible}" FontSize="Medium"/>
 
 
-        <Label Text="{Binding Item.Description}" x:Name="UIDescription" FontSize="Medium" TextColor="#007AC5"/>
+        <Label Text="{Binding Item.Description}" x:Name="UIDescription" IsVisible="{Binding Item.DescriptionVisible}" FontSize="Medium" TextColor="#007AC5"/>
         
         
         <Button Text="Открыть страницу мероприятия"

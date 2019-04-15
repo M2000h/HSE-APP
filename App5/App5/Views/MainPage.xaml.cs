@@ -9,7 +9,7 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : TabbedPage
     {
-        public MainPage()
+        public MainPage() 
         {
             InitializeComponent();
             AboutPage.ThemeChanged += UIUpdate;
