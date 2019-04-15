@@ -26,6 +26,8 @@ namespace App5.Views
             ToolBar.BarBackgroundColor = AppData.BarBackgroundColor;
             ToolBar.BarTextColor = AppData.FrontColor;
             BackgroundColor = AppData.BackgroundColor;
+            Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(ToolBar, AppData.FrontColor);
+            Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(ToolBar, Color.FromRgb(93, 188, 210));
         }
     }
 }
