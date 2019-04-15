@@ -86,6 +86,8 @@ namespace App5.ViewModels
                 if (item.Header.ToLower().
                     Contains(SearchQuery.ToLower()) ||
                    item.Description.ToLower().
+                    Contains(SearchQuery.ToLower()) ||
+                   item.Place.ToLower().
                     Contains(SearchQuery.ToLower()))
                 {
                     if (item.Day != Day)
@@ -116,6 +118,8 @@ namespace App5.ViewModels
                 if (AppData.Links.Contains(item.Link) && (item.Header.ToLower().
                     Contains(SearchQuery.ToLower()) ||
                     item.Description.ToLower().
+                    Contains(SearchQuery.ToLower()) ||
+                   item.Place.ToLower().
                     Contains(SearchQuery.ToLower())))
                 {
                     if (item.Day != Day)
