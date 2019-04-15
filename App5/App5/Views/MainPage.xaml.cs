@@ -1,5 +1,6 @@
 ﻿using System;
 using App5.Models;
+using App5.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,18 +9,10 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : TabbedPage
     {
-        
-        public delegate void Handler();
-        static public event Handler UIChenged;
-        static public void UI()
-        {
-            UIChenged();
-        }
         public MainPage()
         {
-            
             InitializeComponent();
-            UIChenged += UIUpdate;
+            AboutPage.ThemeChanged += UIUpdate;
         }
         void UIUpdate()
         {

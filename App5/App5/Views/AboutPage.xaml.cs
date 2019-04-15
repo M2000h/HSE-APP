@@ -48,7 +48,6 @@ namespace App5.Views
             LANG_TEXT.TextColor = AppData.FrontColor;
             THEME_TEXT.TextColor = AppData.FrontColor;
             ThemeChanged();
-            MainPage.UI();
 
 
         }
