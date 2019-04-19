@@ -23,6 +23,8 @@
                        BackgroundColor="#1658DA"
                        TextColor="White"
                        CancelButtonColor="White"
+                       PlaceholderColor="#2d2d2d"
+                       Placeholder="Поиск"
                        IsVisible="False"/>
             
             <ListView x:Name="ItemsListView1" 

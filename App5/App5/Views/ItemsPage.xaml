@@ -20,15 +20,17 @@
 
     <ContentPage.Content>
 
-        <StackLayout> 
-            
+        <StackLayout>
+
             <SearchBar x:Name="SearchBar" 
                        VerticalOptions="Start"
                        BackgroundColor="#1658DA"
                        TextColor="White"
                        CancelButtonColor="White"
-                       IsVisible="False"/>
-            
+                       PlaceholderColor="#2d2d2d"
+                       Placeholder="Поиск"
+                       IsVisible="False"></SearchBar>
+
             <ListView x:Name="ItemsListView1" 
                       ItemsSource="{Binding Items}"
                       VerticalOptions="FillAndExpand"
