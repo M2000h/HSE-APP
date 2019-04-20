@@ -22,3 +22,10 @@ This is app for monitoring HSE events
   <img src="https://pp.userapi.com/c851536/v851536482/100cfa/DyDPu6-fQRw.jpg" width="20%" /> 
 </p>
 
+## Author
+
+* **Maxim Shakura** - [M2000h](https://github.com/M2000h)
+
+## License
+
+This project is licensed under the MIT License - see the [license website](https://opensource.org/licenses/MIT) for details
