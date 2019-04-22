@@ -12,15 +12,20 @@ namespace App5.Views
     {
         public delegate void VoidDelegate();
         public static event VoidDelegate ThemeChanged;
+        public static void f() => ThemeChanged();
         public AboutPage()
         {
             InitializeComponent();
+            ThemeChanged += UIUpdate;
+            English.IsEnabled = AppData.isrus;
+            Russian.IsEnabled = !AppData.isrus;
         }
         async void Russian_Clicked(object sender, EventArgs args)
         {
             Russian.IsEnabled = false;
             English.IsEnabled = true;
             AppData.isrus = true;
+            AppData.SettingChanged();
             ItemsViewModel.LoadItemsCommand1.Execute(null);
         }
         async void English_Clicked(object sender, EventArgs args)
@@ -28,28 +33,31 @@ namespace App5.Views
             English.IsEnabled = false;
             Russian.IsEnabled = true;
             AppData.isrus = false;
+            AppData.SettingChanged();
             ItemsViewModel.LoadItemsCommand1.Execute(null);
 
         }
         async void Black_Clicked(object sender, EventArgs args)
         {
+            AppData.SettingChanged();
             AppData.IsThemeWhite = false;
-            UIUpdate();
+            AppData.SettingChanged();
+            ThemeChanged();
 
         }
         async void White_Clicked(object sender, EventArgs args)
         {
+            AppData.SettingChanged();
             AppData.IsThemeWhite = true;
-            UIUpdate();
+            AppData.SettingChanged();
+            ThemeChanged();
         }
         void UIUpdate()
         {
             StackLayout1.BackgroundColor = AppData.BackgroundColor;
             LANG_TEXT.TextColor = AppData.FrontColor;
             THEME_TEXT.TextColor = AppData.FrontColor;
-            ThemeChanged();
-
-
+            
         }
     }
 }

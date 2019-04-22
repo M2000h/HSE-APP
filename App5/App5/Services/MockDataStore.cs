@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using App5.Models;
 using Newtonsoft.Json;
-
+using App5.Views;
 
 namespace App5.Services
 {
@@ -36,6 +36,7 @@ namespace App5.Services
         {
             AppData.ru = Get("https://shakura.dev/hseapi");
             AppData.en = Get("https://shakura.dev/hseapien");
+            AboutPage.f();
         }
         public MockDataStore()
         {

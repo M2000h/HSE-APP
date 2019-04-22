@@ -38,6 +38,7 @@ namespace App5.Views
                 AppData.Links.Add(viewModel.Item.Link);
             Header.Icon = viewModel.Item.FavSource;
             ItemsViewModel.LoadItemsCommand1.Execute(null);
+            AppData.SettingChanged();
         }
 
 
