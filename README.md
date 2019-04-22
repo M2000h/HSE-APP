@@ -22,6 +22,11 @@ This is app for monitoring HSE events
   <img src="https://pp.userapi.com/c851536/v851536482/100cfa/DyDPu6-fQRw.jpg" width="20%" /> 
 </p>
 
+## Built With
+
+* [Xamarin.Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/) - cross-platform UI toolkit for .NET developers.
+* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) - programming language
+
 ## Author
 
 * **Maxim Shakura** - [M2000h](https://github.com/M2000h)
