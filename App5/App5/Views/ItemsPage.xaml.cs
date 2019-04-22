@@ -59,14 +59,14 @@ namespace App5.Views
             else
                 SearchBar.Text = "";
         }
-        string lang = AppData.API_Link;
+        bool lang = AppData.isrus;
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0 || lang!= AppData.API_Link)
+            if (viewModel.Items.Count == 0 || lang!= AppData.isrus)
                 viewModel.LoadItemsCommand.Execute(null);
-            lang = AppData.API_Link;
+            lang = AppData.isrus;
         }
         void UIUpdate()
         {

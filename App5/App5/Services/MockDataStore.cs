@@ -40,7 +40,7 @@ namespace App5.Services
         public MockDataStore()
         {
             
-            Item[] data = JsonConvert.DeserializeObject<Item[]>(AppData.curr);
+            Item[] data = JsonConvert.DeserializeObject<Item[]>(AppData.isrus ? AppData.ru : AppData.en);
             items = data.OfType<Item>().ToList();
         }
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)

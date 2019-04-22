@@ -20,14 +20,14 @@ namespace App5.Views
         {
             Russian.IsEnabled = false;
             English.IsEnabled = true;
-            AppData.API_Link = "https://shakura.dev/hseapi";
+            AppData.isrus = true;
             ItemsViewModel.LoadItemsCommand1.Execute(null);
         }
         async void English_Clicked(object sender, EventArgs args)
         {
             English.IsEnabled = false;
             Russian.IsEnabled = true;
-            AppData.API_Link = "https://shakura.dev/hseapien";
+            AppData.isrus = false;
             ItemsViewModel.LoadItemsCommand1.Execute(null);
 
         }
