@@ -13,7 +13,6 @@ namespace App5.Models
         public string Place { get; set; } = "";
         public string Time { get; set; } = "";
         public string Date { get => Time == "" ? Day : Day + ", " + Time; }
-        //public string MainTag { get => Tags.Length > 0 ? Tags[0] : ""; }
         public string[] Tags { set; get; } = { };
         public string[] Extra { set; get; } = { };
         public bool DayVisible { get => Type == "Day"; }

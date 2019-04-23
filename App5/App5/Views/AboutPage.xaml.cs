@@ -10,8 +10,7 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AboutPage : ContentPage
     {
-        public delegate void VoidDelegate();
-        public static event VoidDelegate ThemeChanged;
+        public static event Action ThemeChanged;
         public static void f() => ThemeChanged();
         public AboutPage()
         {
@@ -39,7 +38,6 @@ namespace App5.Views
         }
         async void Black_Clicked(object sender, EventArgs args)
         {
-            AppData.SettingChanged();
             AppData.IsThemeWhite = false;
             AppData.SettingChanged();
             ThemeChanged();
@@ -47,7 +45,6 @@ namespace App5.Views
         }
         async void White_Clicked(object sender, EventArgs args)
         {
-            AppData.SettingChanged();
             AppData.IsThemeWhite = true;
             AppData.SettingChanged();
             ThemeChanged();
@@ -57,7 +54,6 @@ namespace App5.Views
             StackLayout1.BackgroundColor = AppData.BackgroundColor;
             LANG_TEXT.TextColor = AppData.FrontColor;
             THEME_TEXT.TextColor = AppData.FrontColor;
-            
         }
     }
 }

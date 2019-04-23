@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using System.Text;
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -58,19 +54,16 @@ namespace App5.Models
                 IsThemeWhite = a.IsThemeWhite;
                 Links = a.Links;
             }
-            catch (Exception e)
-            {
-            }
+            catch (Exception e){}
 
         }
         static void Load()
         {
             try
             {
-                FileStruct a = new FileStruct();
-                a.isrus = isrus;
-                a.IsThemeWhite = IsThemeWhite;
-                a.Links = Links;
+                FileStruct a = new FileStruct() {isrus=isrus,
+                    IsThemeWhite= IsThemeWhite,
+                    Links = Links};
                 string json = JsonConvert.SerializeObject(a);
 
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -81,8 +74,7 @@ namespace App5.Models
                     strm.Write(json);
                 }
             }
-            catch (Exception e){
-            }
+            catch (Exception e){}
         }
     }
 }
