@@ -3,7 +3,6 @@ using App5.Models;
 using App5.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 namespace App5.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
