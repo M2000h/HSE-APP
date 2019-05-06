@@ -31,7 +31,7 @@ namespace App5.Services
                 return null;
             }
 
-        }
+        } 
         static public void RealoadData()
         {
             AppData.ru = Get("https://shakura.dev/hseapi");
