@@ -7,20 +7,22 @@
             x:Class="App5.Views.MainPage"
             BarBackgroundColor="White"
             x:Name="ToolBar"
-            xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize">
-    <TabbedPage.Children>
-        <NavigationPage Title="Browse" x:Name="NavigationPage1">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource" x:Name="OnPlatform1">
-                    <On Platform="Android " Value="@drawable/calendar.png" x:Name="CalendarIcon" />
+            >
+    <TabbedPage.Children ><!--Title="Browse"-->
+
+        <NavigationPage  x:Name="NavigationPage1" >
+            <NavigationPage.Icon >
+                
+                <OnPlatform x:TypeArguments="FileImageSource" x:Name="OnPlatform1" >
+                    <On Platform="Android " Value="@drawable/calendar.png" x:Name="CalendarIcon"/>
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
-
-        <NavigationPage Title="Favourites" >
+<!--Title="Favourites"-->
+        <NavigationPage >
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="Android " Value="@drawable/favourite.png"/>
@@ -30,8 +32,8 @@
                 <views:Favorite />
             </x:Arguments>
         </NavigationPage>
-
-        <NavigationPage Title="Account">
+<!--Title="Account"-->
+        <NavigationPage >
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="Android " Value="@drawable/menu.png"/>
