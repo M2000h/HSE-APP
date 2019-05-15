@@ -1,17 +1,9 @@
-﻿using System;
-using System.Windows.Input;
-
-using Xamarin.Forms;
+﻿using System.Windows.Input;
 
 namespace App5.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
-        public AboutViewModel()
-        {
-            Title = "About";
-        }
-
         public ICommand OpenWebCommand { get; }
     }
 }

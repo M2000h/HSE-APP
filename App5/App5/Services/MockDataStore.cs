@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.Serialization.Json;
-using System.Text;
 using System.Threading.Tasks;
 using App5.Models;
 using Newtonsoft.Json;
@@ -14,7 +11,15 @@ namespace App5.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
+        /// <summary>
+        /// List of Items
+        /// </summary>
         List<Item> items;
+        /// <summary>
+        /// Request to server
+        /// </summary>
+        /// <param name="url">Link</param>
+        /// <returns></returns>
         static public string Get(string url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -31,16 +36,21 @@ namespace App5.Services
                 return null;
             }
 
-        } 
+        }
+        /// <summary>
+        /// Reloadl Data from server
+        /// </summary>
         static public void RealoadData()
         {
             AppData.ru = Get("https://shakura.dev/hseapi");
             AppData.en = Get("https://shakura.dev/hseapien");
             AboutPage.f();
         }
+        /// <summary>
+        /// Local relaod data after swiching language
+        /// </summary>
         public MockDataStore()
         {
-            
             Item[] data = JsonConvert.DeserializeObject<Item[]>(AppData.isrus ? AppData.ru : AppData.en);
             items = data.OfType<Item>().ToList();
         }

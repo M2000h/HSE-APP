@@ -6,6 +6,9 @@ using Newtonsoft.Json;
 
 namespace App5.Models
 {
+    /// <summary>
+    /// Sctruct of Data which writes to files
+    /// </summary>
     struct FileStruct
     {
         public bool isrus { set; get; }
@@ -27,6 +30,7 @@ namespace App5.Models
         static public bool isrus { set; get; } = true;
          
 
+
         /// <summary>
         /// Colors
         /// </summary>
@@ -38,6 +42,9 @@ namespace App5.Models
         static AppData()
         {
             SettingChanged += Load;
+            /// <summary>
+            /// Read from file
+            /// </summary>
             try
             {
                 FileStruct a;
@@ -57,6 +64,9 @@ namespace App5.Models
             catch (Exception e){}
 
         }
+        /// <summary>
+        /// Write to file
+        /// </summary>
         static void Load()
         {
             try
