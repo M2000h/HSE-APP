@@ -6,7 +6,7 @@ This is app for monitoring HSE events
 ### White theme
 
 <p float="left">
-  <img src="https://pp.userapi.com/c849216/v849216080/175e42/szEq9yFu_ug.jpg" width="20%" />
+  <img src="/screenshots/main_rus_white.jpg" width="20%" />
   <img src="https://pp.userapi.com/c850536/v850536482/10f3aa/OLLIl2tVeqI.jpg" width="20%" />
   <img src="https://pp.userapi.com/c850632/v850632482/fe468/xiSK1wbIgxs.jpg" width="20%" />
   <img src="https://pp.userapi.com/c849036/v849036080/170dd5/aZfdxQ77JXk.jpg" width="20%" /> 
