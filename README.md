@@ -6,12 +6,11 @@ This is app for monitoring HSE events
 ### White theme
 
 <p float="left">
-  <img src="/screenshots/main_rus_white.jpg" width="15%" />
-  <img src="/screenshots/main_en_white.jpg" width="15%" />
-  <img src="/screenshots/event_white_rus.jpg" width="15%" />
-  <img src="/screenshots/search_rus_white.jpg" width="15%" /> 
-  <img src="/screenshots/fav_rus_white.jpg" width="15%" />
-  <img src="/screenshots/set_white.jpg" width="15%" />
+  <img src="/screenshots/main_rus_white.jpg" width="19%" />
+  <img src="/screenshots/main_en_white.jpg" width="19%" />
+  <img src="/screenshots/event_white_rus.jpg" width="19%" />
+  <img src="/screenshots/search_rus_white.jpg" width="19%" /> 
+  <img src="/screenshots/set_white.jpg" width="19%" />
 </p>
 
 
