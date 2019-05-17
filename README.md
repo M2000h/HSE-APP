@@ -17,10 +17,10 @@ This is app for monitoring HSE events
 ### Black theme
 
 <p float="left">
-  <img src="https://pp.userapi.com/c845216/v845216080/1f1e70/K4VDmEZfsEQ.jpg" width="19%" />
-  <img src="https://pp.userapi.com/c853624/v853624482/27c77/w5zAYbOUcuM.jpg" width="19%" />
+  <img src="/screenshots/main_rus_black.jpg" width="19%" />
+  <img src="/screenshots/main_en_black.jpg" width="19%" />
   <img src="/screenshots/event_black.jpg" width="19%" />
-  <img src="https://pp.userapi.com/c851536/v851536482/100cfa/DyDPu6-fQRw.jpg" width="19%" />
+  <img src="/screenshots/search_rus_black.jpg" width="19%" />
   <img src="/screenshots/set_black.jpg" width="19%" />
 </p>
 
