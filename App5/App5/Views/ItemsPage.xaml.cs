@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using App5.Models;
-using App5.Views;
 using App5.ViewModels;
 using App5.Services;
-using System.Threading;
-
 
 namespace App5.Views
 {
@@ -20,6 +11,9 @@ namespace App5.Views
     public partial class ItemsPage : ContentPage
     {
         static public ItemsViewModel viewModel;
+        /// <summary>
+        /// search bar query
+        /// </summary>
         static public string SearchQuery = "";
         void SearchQueryUpdate(object sender, EventArgs e)
         {
@@ -49,7 +43,11 @@ namespace App5.Views
             
             ItemsListView1.SelectedItem = null;
         }
-
+        /// <summary>
+        /// search bar clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void Search_Clicked(object sender, EventArgs e)
         {
             SearchBar.IsVisible = !SearchBar.IsVisible;
@@ -68,6 +66,9 @@ namespace App5.Views
                 viewModel.LoadItemsCommand.Execute(null);
             lang = AppData.isrus;
         }
+        /// <summary>
+        /// interface update
+        /// </summary>
         void UIUpdate()
         {
             viewModel.LoadItemsCommand.Execute(null);

@@ -2,7 +2,6 @@
 using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using App5.Models;
 using App5.ViewModels;
 
@@ -11,12 +10,9 @@ namespace App5.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-
-
         ItemDetailViewModel viewModel;
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
-
             InitializeComponent();
             BindingContext = this.viewModel = viewModel;
             UIUpdate();
@@ -48,6 +44,9 @@ namespace App5.Views
             var th = new Thread(OpenLink);
             th.Start();
         }
+        /// <summary>
+        /// interface update
+        /// </summary>
         void UIUpdate()
         {
             UIHeader.TextColor = AppData.FrontColor;

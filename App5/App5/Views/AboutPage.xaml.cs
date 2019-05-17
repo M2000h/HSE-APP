@@ -1,10 +1,9 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App5.Models;
 using App5.ViewModels;
-using App5.Views;
+
 namespace App5.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -19,6 +18,11 @@ namespace App5.Views
             English.IsEnabled = AppData.isrus;
             Russian.IsEnabled = !AppData.isrus;
         }
+        /// <summary>
+        /// lang changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void Russian_Clicked(object sender, EventArgs args)
         {
             Russian.IsEnabled = false;
@@ -27,6 +31,11 @@ namespace App5.Views
             AppData.SettingChanged();
             ItemsViewModel.LoadItemsCommand1.Execute(null);
         }
+        /// <summary>
+        /// lang changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void English_Clicked(object sender, EventArgs args)
         {
             English.IsEnabled = false;
@@ -36,6 +45,11 @@ namespace App5.Views
             ItemsViewModel.LoadItemsCommand1.Execute(null);
 
         }
+        /// <summary>
+        /// theme changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void Black_Clicked(object sender, EventArgs args)
         {
             AppData.IsThemeWhite = false;
@@ -43,6 +57,11 @@ namespace App5.Views
             ThemeChanged();
 
         }
+        /// <summary>
+        /// theme changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void White_Clicked(object sender, EventArgs args)
         {
             AppData.IsThemeWhite = true;

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using App5.Models;
 using App5.Views;
 
@@ -31,7 +28,6 @@ namespace App5.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             LoadItemsCommand1 = LoadItemsCommand;
             SearchItems = new Command1(async () => await ExecuteSearchItems());
@@ -39,7 +35,10 @@ namespace App5.ViewModels
         }
 
 
-
+        /// <summary>
+        /// Laod Items
+        /// </summary>
+        /// <returns></returns>
         async Task ExecuteLoadItemsCommand()
         {
 
@@ -69,8 +68,10 @@ namespace App5.ViewModels
 
         }
 
-
-
+        /// <summary>
+        /// Searching in list of items
+        /// </summary>
+        /// <returns></returns>
         async Task ExecuteSearchItems()
         {
 
@@ -104,7 +105,10 @@ namespace App5.ViewModels
         }
 
 
-
+        /// <summary>
+        /// Searching in Favorits list of items
+        /// </summary>
+        /// <returns></returns>
         async Task ExecuteSearchFavotitesItems()
         {
 
