@@ -24,10 +24,16 @@ This is app for monitoring HSE events
   <img src="/screenshots/set_black.jpg" width="19%" />
 </p>
 
+## API channels
+
+* [shakura.dev/hseapi](shakura.dev/hseapi) - for Russian-lang events
+* [shakura.dev/hseapi](shakura.dev/hseapien) - for English-lang events
+
 ## Built With
 
-* [Xamarin.Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/) - cross-platform UI toolkit for .NET developers.
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) - programming language
+* [Xamarin.Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/) - cross-platform UI toolkit for .NET developers.
+* [Visual Studio](visualstudio.microsoft.com) - IDE from Microsoft
 
 ## Author
 
