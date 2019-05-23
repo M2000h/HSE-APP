@@ -32,7 +32,7 @@ This app is designed for
   <img src="/screenshots/main_en_white.jpg" width="19%" />
   <img src="/screenshots/event_white_rus.jpg" width="19%" />
   <img src="/screenshots/search_rus_white.jpg" width="19%" /> 
-  <img src="/screenshots/set_white.jpg" width="5%" />
+  <img src="/screenshots/set_white.jpg" width="19%" />
 </p>
 
 
