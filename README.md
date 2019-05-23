@@ -57,8 +57,8 @@ This app is designed for
 
 ## API channels
 
-* [shakura.dev/hseapi](shakura.dev/hseapi) - for Russian-lang events
-* [shakura.dev/hseapien](shakura.dev/hseapien) - for English-lang events
+* [shakura.dev/hseapi](https://shakura.dev/hseapi) - for Russian-lang events
+* [shakura.dev/hseapien](https://shakura.dev/hseapien) - for English-lang events
 
 ## Built With
 
