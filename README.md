@@ -2,16 +2,16 @@
 
 This app informs the users about the activities of the HSE.
 
+### Purpose
+
+Make information about hse activities mor more accessible
+
 ### Target audience
 
 This app is designed for
 * Students
 * Teachers, lecturers, professors
 * Entrants
-
-### Purpose
-
-Make information about hse activities mor more accessible
 
 ## Functions
 
