@@ -35,16 +35,11 @@ This app is designed for
 </p>
 
 
-### Search for activities
+### Search for activities                                                    Event details
 
 <p float="left">
   <img src="/screenshots/search_rus_black.jpg" width="24%" />
   <img src="/screenshots/search_rus_white.jpg" width="24%" /> 
-</p>
-
-### Event details
-
-<p float="left">
   <img src="/screenshots/event_white_rus.jpg" width="24%" />
   <img src="/screenshots/event_black.jpg" width="24%" />
 </p>
