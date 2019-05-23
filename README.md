@@ -25,25 +25,35 @@ This app is designed for
 
 ## Screenshots
 
-### White theme
+### List of all activities
 
 <p float="left">
-  <img src="/screenshots/main_rus_white.jpg" width="19%" />
-  <img src="/screenshots/main_en_white.jpg" width="19%" />
-  <img src="/screenshots/event_white_rus.jpg" width="19%" />
-  <img src="/screenshots/search_rus_white.jpg" width="19%" /> 
-  <img src="/screenshots/set_white.jpg" width="19%" />
+  <img src="/screenshots/main_rus_white.jpg" width="24%" />
+  <img src="/screenshots/main_rus_black.jpg" width="24%" />
+  <img src="/screenshots/main_en_white.jpg" width="24%" />
+  <img src="/screenshots/main_en_black.jpg" width="24%" />
 </p>
 
 
-### Black theme
+### Search for activities
 
 <p float="left">
-  <img src="/screenshots/main_rus_black.jpg" width="19%" />
-  <img src="/screenshots/main_en_black.jpg" width="19%" />
-  <img src="/screenshots/event_black.jpg" width="19%" />
-  <img src="/screenshots/search_rus_black.jpg" width="19%" />
-  <img src="/screenshots/set_black.jpg" width="19%" />
+  <img src="/screenshots/search_rus_black.jpg" width="24%" />
+  <img src="/screenshots/search_rus_white.jpg" width="24%" /> 
+</p>
+
+### Event details
+
+<p float="left">
+  <img src="/screenshots/event_white_rus.jpg" width="24%" />
+  <img src="/screenshots/event_black.jpg" width="24%" />
+</p>
+
+### Settings
+
+<p float="left">
+  <img src="/screenshots/set_white.jpg" width="24%" />
+  <img src="/screenshots/set_black.jpg" width="24%" />
 </p>
 
 ## Download
