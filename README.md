@@ -38,8 +38,8 @@ This app is designed for
 ### Search for activities                                                    Event details
 
 <p float="left">
-  <img src="/screenshots/search_rus_black.jpg" width="24%" />
   <img src="/screenshots/search_rus_white.jpg" width="24%" /> 
+  <img src="/screenshots/search_rus_black.jpg" width="24%" />
   <img src="/screenshots/event_white_rus.jpg" width="24%" />
   <img src="/screenshots/event_black.jpg" width="24%" />
 </p>
