@@ -16,10 +16,15 @@ Make information about hse activities mor more accessible
 ## Functions
 
 <img src="/screenshots/calendar.png" width="1.5%" /> Show list of all activities
+
 <img src="/screenshots/Adding.png" width="1.5%" /> Adding activities to favorite
+
 <img src="/screenshots/Fav.png" width="1.5%" /> Show list of favorite activities
-<img src="/screenshots/Search.png" width="1.5%" /> Search for events 
+
+<img src="/screenshots/Search.png" width="1.5%" /> Search for events
+
 <img src="/screenshots/Lang.png" width="1.5%" /> Choose the language
+
 <img src="/screenshots/Settings.png" width="1.5%" /> Choose the color theme
 
 ## Screenshots
