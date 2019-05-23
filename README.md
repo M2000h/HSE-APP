@@ -48,7 +48,7 @@ This app is designed for
 
 ## Download
 
-[Download](https://github.com/M2000h/HSE-APP/raw/master/HSEAPP.apk)
+[Download link](https://github.com/M2000h/HSE-APP/raw/master/HSEAPP.apk)
 
 ## API channels
 
