@@ -46,6 +46,10 @@ This app is designed for
   <img src="/screenshots/set_black.jpg" width="19%" />
 </p>
 
+## Download
+
+[Download](https://github.com/M2000h/HSE-APP/raw/master/HSEAPP.apk)
+
 ## API channels
 
 * [shakura.dev/hseapi](shakura.dev/hseapi) - for Russian-lang events
