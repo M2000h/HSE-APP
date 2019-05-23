@@ -1,6 +1,6 @@
 # HSE-APP
 
-This app informs the users about the activities of the HSE. The purpose of the project was to make information about hse activities mor more accessible.
+This mobile app informs the users about the activities of the HSE. The purpose of the project was to make information about hse activities mor more accessible.
 
 ### Target audience
 
