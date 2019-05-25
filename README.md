@@ -53,7 +53,7 @@ This app is designed for
 
 ## Download
 
-[Download apk file](https://github.com/M2000h/HSE-APP/raw/master/HSEAPP.apk)
+[Download apk file](https://shakura.dev/HSEAPP)
 
 ## API channels
 
